@@ -14,7 +14,7 @@ if __name__=="__main__":
 
     #rssi txt needs processing to work. removes 'HEP' and 'HEM' from RBx and replaces with sign
     #col1 = unix timestamp, col2 = RBx number, col6 = 2.5V, col9 =  J14 RSSI int, col10 = J15 RSSI int
-    data = np.loadtxt('rssi_Aug30_prepped.txt',usecols=(1,2,6,9,10))
+    data = np.loadtxt('exampleTxtFiles/rssi_Aug30_prepped.txt',usecols=(1,2,6,9,10))
     df   = pd.DataFrame(data)
     df["currJ14"] = rssiIntToCurr(df[3],df[2])#RSSI in uA
     df["currJ15"] = rssiIntToCurr(df[4],df[2])#RSSI in uA
